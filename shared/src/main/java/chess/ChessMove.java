@@ -51,7 +51,7 @@ public class ChessMove {
             return false;
         }
         ChessMove other = (ChessMove) obj;
-        return this.startPosition == other.startPosition && this.endPosition == other.endPosition && this.promotionPiece == other.promotionPiece;
+        return this.startPosition.equals(other.startPosition) && this.endPosition.equals(other.endPosition) && this.promotionPiece.equals(other.promotionPiece);
     }
 
     @Override
