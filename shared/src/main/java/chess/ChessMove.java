@@ -61,4 +61,19 @@ public class ChessMove {
     public int hashCode() {
         return Objects.hash(startPosition, endPosition, promotionPiece);
     }
+
+    @Override
+    public String toString() {
+        return String.format("[%s to %s (%s)]", startPosition, endPosition, promotionPiece);
+    }
+
+//    public static void main(String[] args) {
+//        ChessPiece whitePawn = new ChessPiece(ChessGame.TeamColor.WHITE, ChessPiece.PieceType.PAWN);
+//        ChessPosition start = new ChessPosition(2,2);
+//        ChessPosition end = new ChessPosition(2, 3);
+//        ChessMove move = new ChessMove(start, end, ChessPiece.PieceType.QUEEN);
+//        ChessMove move2 = new ChessMove(start, end, null);
+//        System.out.println(move.toString());
+//        System.out.println(move2.toString());
+//    }
 }

@@ -53,8 +53,8 @@ public class ChessPosition {
         return String.format("(%d, %d)", row, col);
     }
 
-    public static void main(String[] args) {
-        ChessPosition position = new ChessPosition(2, 3);
-        System.out.println(position.toString());
-    }
+//    public static void main(String[] args) {
+//        ChessPosition position = new ChessPosition(2, 3);
+//        System.out.println(position.toString());
+//    }
 }
