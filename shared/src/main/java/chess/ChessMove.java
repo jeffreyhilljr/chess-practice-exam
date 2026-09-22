@@ -47,11 +47,14 @@ public class ChessMove {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() != ChessMove.class) {
+        if (obj == null) {
             return false;
+        } else if (obj.getClass() != ChessMove.class) {
+            return false;
+        } else {
+            ChessMove other = (ChessMove) obj;
+            return this.startPosition.equals(other.startPosition) && this.endPosition.equals(other.endPosition) && this.promotionPiece == other.promotionPiece;
         }
-        ChessMove other = (ChessMove) obj;
-        return this.startPosition.equals(other.startPosition) && this.endPosition.equals(other.endPosition) && this.promotionPiece.equals(other.promotionPiece);
     }
 
     @Override
