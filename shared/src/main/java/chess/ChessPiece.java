@@ -77,4 +77,46 @@ public class ChessPiece {
             return this.type == other.type && this.pieceColor == other.pieceColor;
         }
     }
+
+    @Override
+    public String toString() {
+        if (pieceColor == ChessGame.TeamColor.WHITE) {
+            if (type == PieceType.PAWN) {
+                return "P";
+            } else if (type == PieceType.ROOK) {
+                return "R";
+            } else if (type == PieceType.KNIGHT) {
+                return "N";
+            } else if (type == PieceType.BISHOP) {
+                return "B";
+            } else if (type == PieceType.KING) {
+                return "K";
+            } else if (type == PieceType.QUEEN) {
+                return "Q";
+            } else {
+                return "";
+            }
+        } else {
+            if (type == PieceType.PAWN) {
+                return "p";
+            } else if (type == PieceType.ROOK) {
+                return "r";
+            } else if (type == PieceType.KNIGHT) {
+                return "n";
+            } else if (type == PieceType.BISHOP) {
+                return "b";
+            } else if (type == PieceType.KING) {
+                return "k";
+            } else if (type == PieceType.QUEEN) {
+                return "q";
+            } else {
+                return "";
+            }
+        }
+    }
+
+//    public static void main(String[] args) {
+//        ChessPiece piece = new ChessPiece(ChessGame.TeamColor.WHITE, PieceType.PAWN);
+//        System.out.println(piece.toString());
+//    }
 }
