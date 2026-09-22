@@ -13,7 +13,7 @@ public class KingMoveCalculator implements PieceMoveCalculator {
 
         for (int r = row - 1; r < row + 2; r++) {
             for (int c = col - 1; c < col + 2; c++) {
-                if (r >= 0 && r <= 8 && c >= 0 && c <= 8) {
+                if (r > 0 && r < 9 && c > 0 && c < 9) {
                     ChessPosition newPosition = new ChessPosition(r, c);
                     if (board.getPiece(newPosition) == null) {
                         moves.add(new ChessMove(myPosition, newPosition, null));
