@@ -4,11 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueenMoveCalculator implements PieceMoveCalculator {
-    static List<ChessMove> pieceMovesGetter(ChessBoard board, ChessPosition myPosition) {
+
+    @Override
+    public List<ChessMove> pieceMovesGetter(ChessBoard board, ChessPosition myPosition) {
         List<ChessMove> moves = new ArrayList<>();
 
-        moves.addAll(RookMoveCalculator.pieceMovesGetter(board, myPosition));
-        moves.addAll(BishopMoveCalculator.pieceMovesGetter(board, myPosition));
+        RookMoveCalculator ob = new RookMoveCalculator();
+        BishopMoveCalculator ob2 = new BishopMoveCalculator();
+
+        moves.addAll(ob.pieceMovesGetter(board, myPosition));
+        moves.addAll(ob2.pieceMovesGetter(board, myPosition));
 
         return moves;
     }

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RookMoveCalculator implements PieceMoveCalculator {
-    static List<ChessMove> pieceMovesGetter(ChessBoard board, ChessPosition myPosition) {
+
+    @Override
+    public List<ChessMove> pieceMovesGetter(ChessBoard board, ChessPosition myPosition) {
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
         ChessGame.TeamColor team = board.getPiece(myPosition).getTeamColor();

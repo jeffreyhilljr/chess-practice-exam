@@ -3,8 +3,10 @@ package chess;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PawnMoveCalculator implements PieceMoveCalculator{
-    static List<ChessMove> pieceMovesGetter(ChessBoard board, ChessPosition myPosition) {
+public class PawnMoveCalculator implements PieceMoveCalculator {
+
+    @Override
+    public List<ChessMove> pieceMovesGetter(ChessBoard board, ChessPosition myPosition) {
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
         ChessGame.TeamColor team = board.getPiece(myPosition).getTeamColor();

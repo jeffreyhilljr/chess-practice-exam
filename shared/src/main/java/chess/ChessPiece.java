@@ -55,17 +55,23 @@ public class ChessPiece {
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         if (type == PieceType.KING) {
-            return KingMoveCalculator.pieceMovesGetter(board, myPosition);
+            KingMoveCalculator ob = new KingMoveCalculator();
+            return ob.pieceMovesGetter(board, myPosition);
         } else if (type == PieceType.KNIGHT) {
-            return KnightMoveCalculator.pieceMovesGetter(board, myPosition);
+            KnightMoveCalculator ob = new KnightMoveCalculator();
+            return ob.pieceMovesGetter(board, myPosition);
         } else if (type == PieceType.ROOK) {
-            return RookMoveCalculator.pieceMovesGetter(board, myPosition);
+            RookMoveCalculator ob = new RookMoveCalculator();
+            return ob.pieceMovesGetter(board, myPosition);
         } else if (type == PieceType.BISHOP) {
-            return BishopMoveCalculator.pieceMovesGetter(board, myPosition);
+            BishopMoveCalculator ob = new BishopMoveCalculator();
+            return ob.pieceMovesGetter(board, myPosition);
         } else if (type == PieceType.QUEEN) {
-            return QueenMoveCalculator.pieceMovesGetter(board, myPosition);
+            QueenMoveCalculator ob = new QueenMoveCalculator();
+            return ob.pieceMovesGetter(board, myPosition);
         } else if (type == PieceType.PAWN) {
-            return PawnMoveCalculator.pieceMovesGetter(board, myPosition);
+            PawnMoveCalculator ob = new PawnMoveCalculator();
+            return ob.pieceMovesGetter(board, myPosition);
         } else {
             return new ArrayList<>();
         }
