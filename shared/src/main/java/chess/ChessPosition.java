@@ -47,4 +47,14 @@ public class ChessPosition {
         ChessPosition other = (ChessPosition) obj;
         return this.row == other.row && this.col == other.col;
     }
+
+    @Override
+    public String toString() {
+        return String.format("(%d, %d)", row, col);
+    }
+
+    public static void main(String[] args) {
+        ChessPosition position = new ChessPosition(2, 3);
+        System.out.println(position.toString());
+    }
 }
