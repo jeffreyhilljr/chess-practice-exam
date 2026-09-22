@@ -87,12 +87,9 @@ public class ChessBoard {
 
     @Override
     public boolean equals(Object obj) {
-        if (Objects.isNull(obj)) {
-            return false;
-        } else if (obj.getClass() != ChessBoard.class) {
+        if (!(obj instanceof ChessBoard other)) {
             return false;
         } else {
-            ChessBoard other = (ChessBoard) obj;
             return Arrays.deepEquals(this.board, other.board);
         }
     }

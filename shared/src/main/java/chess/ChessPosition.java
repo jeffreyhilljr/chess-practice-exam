@@ -10,8 +10,8 @@ import java.util.Objects;
  */
 public class ChessPosition {
 
-    private int row;
-    private int col;
+    private final int row;
+    private final int col;
 
     public ChessPosition(int row, int col) {
         this.row = row;
@@ -41,10 +41,9 @@ public class ChessPosition {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() != ChessPosition.class) {
+        if (!(obj instanceof ChessPosition other)) {
             return false;
         }
-        ChessPosition other = (ChessPosition) obj;
         return this.row == other.row && this.col == other.col;
     }
 

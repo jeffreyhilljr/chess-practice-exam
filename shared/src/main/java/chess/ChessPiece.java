@@ -12,8 +12,8 @@ import java.util.Objects;
  */
 public class ChessPiece {
 
-    private ChessGame.TeamColor pieceColor;
-    private ChessPiece.PieceType type;
+    private final ChessGame.TeamColor pieceColor;
+    private final ChessPiece.PieceType type;
 
     public ChessPiece(ChessGame.TeamColor pieceColor, ChessPiece.PieceType type) {
         this.pieceColor = pieceColor;
@@ -78,12 +78,9 @@ public class ChessPiece {
 
     @Override
     public boolean equals(Object obj) {
-        if (Objects.isNull(obj)) {
-            return false;
-        } else if (obj.getClass() != ChessPiece.class) {
+        if (!(obj instanceof ChessPiece other)) {
             return false;
         } else {
-            ChessPiece other = (ChessPiece) obj;
             return this.type == other.type && this.pieceColor == other.pieceColor;
         }
     }
