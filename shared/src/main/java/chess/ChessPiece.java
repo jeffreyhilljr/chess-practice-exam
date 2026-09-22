@@ -63,10 +63,13 @@ public class ChessPiece {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.getClass() != ChessPiece.class) {
+        if (Objects.isNull(obj)) {
             return false;
+        } else if (obj.getClass() != ChessPiece.class) {
+            return false;
+        } else {
+            ChessPiece other = (ChessPiece) obj;
+            return this.type == other.type && this.pieceColor == other.pieceColor;
         }
-        ChessPiece other = (ChessPiece) obj;
-        return this.type == other.type && this.pieceColor == other.pieceColor;
     }
 }
