@@ -1,6 +1,7 @@
 package chess;
 
 import java.util.Collection;
+import java.util.Objects;
 
 /**
  * Represents a single chess piece
@@ -41,7 +42,7 @@ public class ChessPiece {
      * @return which type of chess piece this piece is
      */
     public PieceType getPieceType() {
-        return getPieceType();
+        return type;
     }
 
     /**
@@ -53,5 +54,19 @@ public class ChessPiece {
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pieceColor, type);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj.getClass() != ChessPiece.class) {
+            return false;
+        }
+        ChessPiece other = (ChessPiece) obj;
+        return this.type == other.type && this.pieceColor == other.pieceColor;
     }
 }
